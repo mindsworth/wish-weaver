@@ -3,5 +3,5 @@
 </template>
 
 <script setup lang="ts">
-  // definePageMeta({ layout: 'embed' as any })
+  definePageMeta({ layout: false })
 </script>
