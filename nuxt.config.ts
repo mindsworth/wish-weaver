@@ -8,7 +8,7 @@ export default defineNuxtConfig({
         lang: 'en',
       },
     },
-    baseURL: '',
+    baseURL: 'wish-weaver',
     buildAssetsDir: 'assets/',
   },
   compatibilityDate: '2025-07-15',

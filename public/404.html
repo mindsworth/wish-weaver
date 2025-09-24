@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Page Not Found</title>
+    <script>
+        (function () {
+            // Function to redirect the user to the correct path
+            var path = window.location.pathname.replace(/\/$/, "");
+            if (path !== "/wish-weaver") {
+                window.location.replace("https://mindsworth.github.io/wish-weaver");
+            }
+        })();
+    </script>
+</head>
+
+<body></body>
+
+</html>
