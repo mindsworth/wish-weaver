@@ -8,7 +8,7 @@ export default defineNuxtConfig({
         lang: 'en',
       },
     },
-    baseURL: '/',
+    baseURL: 'wish-weaver',
     buildAssetsDir: 'assets/',
   },
   compatibilityDate: '2025-07-15',
@@ -51,7 +51,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       routes: ['/'],
-      ignore: ['200.html', '404.html']
+      ignore: ['200.html', '404.html'],
     },
   },
 })
