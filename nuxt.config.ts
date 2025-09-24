@@ -49,7 +49,7 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      routes: ['/wish-weaver'],
+      routes: ['/'],
       ignore: ['200.html', '404.html'],
     },
   },
