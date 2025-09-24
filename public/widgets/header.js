@@ -25,6 +25,20 @@
     var iframe = createIframe(options)
     el.innerHTML = ''
     el.appendChild(iframe)
+    function onMessage(evt) {
+      var d = evt.data || {}
+      if (d && d.type === 'ww:height' && d.role === 'header' && typeof d.height === 'number') {
+        iframe.style.height = d.height + 'px'
+      }
+    }
+    window.addEventListener('message', onMessage)
+    var obs = new MutationObserver(function () {
+      if (!document.body.contains(iframe)) {
+        window.removeEventListener('message', onMessage)
+        obs.disconnect()
+      }
+    })
+    obs.observe(document.body, { childList: true, subtree: true })
     return iframe
   }
 
