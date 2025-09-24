@@ -533,7 +533,7 @@ const plugin = /* @__PURE__ */ defineNuxtPlugin({
     let __temp, __restore;
     let routerBase = (/* @__PURE__ */ useRuntimeConfig()).app.baseURL;
     const history = routerOptions.history?.(routerBase) ?? createMemoryHistory(routerBase);
-    const routes = routerOptions.routes ? ([__temp, __restore] = executeAsync(() => routerOptions.routes(_routes)), __temp = await __temp, __restore(), __temp) ?? _routes : _routes;
+    const routes2 = routerOptions.routes ? ([__temp, __restore] = executeAsync(() => routerOptions.routes(_routes)), __temp = await __temp, __restore(), __temp) ?? _routes : _routes;
     let startPosition;
     const router = createRouter({
       ...routerOptions,
@@ -554,7 +554,7 @@ const plugin = /* @__PURE__ */ defineNuxtPlugin({
         }
       },
       history,
-      routes
+      routes: routes2
     });
     nuxtApp.vueApp.use(router);
     const previousRoute = shallowRef(router.currentRoute.value);
@@ -2632,12 +2632,18 @@ const plugin_H5sGgDAlZSyH4IKcZOuBfFOTH_kN1Ti70itniUgSSwQ = /* @__PURE__ */ defin
   // For type portability
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
 });
+const prerender_server_N0hozHEwwH_IgKptiskFJwpWSXrvsqEgDpgbfTfIiig = /* @__PURE__ */ defineNuxtPlugin(async () => {
+  {
+    return;
+  }
+});
 const plugins = [
   unhead_hKAZA1_bvxiy93I1IP_9S2yD27tZYql1oogBkvMEW9k,
   plugin,
   revive_payload_server_EvxXt7eljGnTvrbkR87ZUijh5wN4ijnY1lzrPV_TQdI,
   components_plugin_4kY4pyzJIYX99vmMAAIorFf3CnAaptHitJgf7JxiED8,
-  plugin_H5sGgDAlZSyH4IKcZOuBfFOTH_kN1Ti70itniUgSSwQ
+  plugin_H5sGgDAlZSyH4IKcZOuBfFOTH_kN1Ti70itniUgSSwQ,
+  prerender_server_N0hozHEwwH_IgKptiskFJwpWSXrvsqEgDpgbfTfIiig
 ];
 const layouts = {
   default: defineAsyncComponent(() => import('./default-B7kFgsFh.mjs').then((m) => m.default || m))
@@ -2913,8 +2919,8 @@ const _sfc_main$1 = {
     const statusMessage = _error.statusMessage ?? (is404 ? "Page Not Found" : "Internal Server Error");
     const description = _error.message || _error.toString();
     const stack = void 0;
-    const _Error404 = defineAsyncComponent(() => import('./error-404-CLl3xtnf.mjs'));
-    const _Error = defineAsyncComponent(() => import('./error-500-CsQ1jvwP.mjs'));
+    const _Error404 = defineAsyncComponent(() => import('./error-404-76SYKdQ5.mjs'));
+    const _Error = defineAsyncComponent(() => import('./error-500-DMMCcoR7.mjs'));
     const ErrorTemplate = is404 ? _Error404 : _Error;
     return (_ctx, _push, _parent, _attrs) => {
       _push(ssrRenderComponent(unref(ErrorTemplate), mergeProps({ statusCode: unref(statusCode), statusMessage: unref(statusMessage), description: unref(description), stack: unref(stack) }, _attrs), null, _parent));

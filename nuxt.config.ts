@@ -1,13 +1,15 @@
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from '@tailwindcss/vite'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: {
-        lang: 'en'
+        lang: 'en',
       },
     },
+    baseURL: '/',
+    buildAssetsDir: 'assets/',
   },
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
@@ -22,7 +24,7 @@ export default defineNuxtConfig({
       path: '~/components/ui',
       extensions: ['vue'],
       pathPrefix: false,
-      prefix: 'Ui'
+      prefix: 'Ui',
     },
   ],
   modules: [
@@ -32,13 +34,11 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/scripts',
     '@nuxt/test-utils',
-    'reka-ui/nuxt'
+    'reka-ui/nuxt',
   ],
 
   vite: {
-    plugins: [
-      tailwindcss(),
-    ],
+    plugins: [tailwindcss()],
     css: {
       // Disable CSS sourcemaps to avoid Tailwind v4 vite plugin warnings
       devSourcemap: false,
@@ -47,6 +47,21 @@ export default defineNuxtConfig({
       // Ensure no JS/CSS sourcemaps are generated in dev to keep console clean
       sourcemap: false,
     },
+    resolve: {
+      alias: {
+        // Help resolve Nuxt internal modules
+        '@nuxt/vite-builder/runtime': '@nuxt/vite-builder/dist/runtime',
+      },
+    },
+    optimizeDeps: {
+      exclude: ['@nuxt/vite-builder'],
+    },
+  },
+  nitro: {
+    prerender: {
+      routes: ['/'],
+      crawlLinks: true,
+      ignore: ['/200.html', '/404.html'],
+    },
   },
 })
-
