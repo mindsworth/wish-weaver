@@ -1,0 +1,1 @@
+import{_ as t,c as o,o as s,r as n}from"#entry";const c={},r={class:"text-5xl lg:text-9xl font-bold opacity-10 text-wrap break-words"};function _(e,a){return s(),o("h1",r,[n(e.$slots,"default")])}const x=Object.assign(t(c,[["render",_]]),{__name:"PageTitle"});export{x as _};
