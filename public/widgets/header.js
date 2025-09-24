@@ -11,7 +11,7 @@
     iframe.title = 'WishWeaver Header Widget'
     iframe.style.width = '100%'
     // iframe.style.height = (opts.height || DEFAULTS.height) + 'px'
-    iframe.style.height = 'auto'
+    iframe.style.height = '100%'
     iframe.style.border = '0'
     iframe.style.display = 'block'
     iframe.setAttribute('loading', 'eager')

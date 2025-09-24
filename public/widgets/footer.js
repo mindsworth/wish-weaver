@@ -10,7 +10,7 @@
     iframe.src = opts.src
     iframe.title = 'WishWeaver Footer Widget'
     iframe.style.width = '100%'
-    iframe.style.height = 'auto'
+    iframe.style.height = '100%'
     // iframe.style.height = (opts.height || DEFAULTS.height) + 'px'
     iframe.style.border = '0'
     iframe.style.display = 'block'
