@@ -1,3 +1,48 @@
+## Widgets (Embeddable Header/Footer)
+
+Two widgets are provided that embed the app's Header and Footer into any site via an iframe to avoid framework/CSS conflicts.
+
+### 1) Include the script
+
+Header:
+
+```html
+<script src="/widgets/header.js"></script>
+```
+
+Footer:
+
+```html
+<script src="/widgets/footer.js"></script>
+```
+
+Optionally set a base origin if serving the widget JS from a CDN:
+
+```html
+<script>
+  window.WISHWEAVER_WIDGET_ORIGIN = 'https://mywishweaver.com'
+</script>
+```
+
+### 2) Mount into a container
+
+```html
+<div id="ww-header"></div>
+<div id="ww-footer"></div>
+
+<script>
+  // Header (height can be adjusted)
+  WishWeaverHeaderWidget.mount('#ww-header', { height: 80 })
+
+  // Footer
+  WishWeaverFooterWidget.mount('#ww-footer', { height: 360 })
+  // You may adjust heights to fit the content you render
+  // or use CSS to constrain the mounting container.
+</script>
+```
+
+The widgets render isolated iframes that load `/embed/header` and `/embed/footer` pages.
+
 # Nuxt Minimal Starter
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.

@@ -1,0 +1,20 @@
+@import 'tailwindcss';
+
+:root {
+  --primary: #008080;
+  --primary-hover: #006b6b; /* slightly darker */
+}
+
+/* Utilities to use CSS color variables with Tailwind-like ergonomics */
+.bg-primary {
+  background-color: var(--primary);
+}
+.hover\:bg-primary-hover:hover {
+  background-color: var(--primary-hover);
+}
+.text-primary {
+  color: var(--primary);
+}
+.border-primary {
+  border-color: var(--primary);
+}
